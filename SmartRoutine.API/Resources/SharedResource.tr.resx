@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="Error_EmailAlreadyInUse" xml:space="preserve">
+    <value>Bu email adresi zaten kullanımda.</value>
+  </data>
+  <data name="Error_UserNotFound" xml:space="preserve">
+    <value>Kullanıcı bulunamadı.</value>
+  </data>
+  <data name="Error_InvalidEmailOrPassword" xml:space="preserve">
+    <value>Geçersiz email veya şifre.</value>
+  </data>
+  <data name="Error_RoutineNotFound" xml:space="preserve">
+    <value>Rutin bulunamadı.</value>
+  </data>
+  <data name="Error_RoutineAccessDenied" xml:space="preserve">
+    <value>Bu rutine erişim yetkiniz yok.</value>
+  </data>
+</root> 

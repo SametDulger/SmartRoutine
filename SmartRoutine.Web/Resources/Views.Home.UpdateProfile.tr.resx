@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="UpdateProfileTitle" xml:space="preserve"><value>Profil Bilgilerini Güncelle</value></data>
+  <data name="ProfileUpdatedSuccessfully" xml:space="preserve"><value>Profil başarıyla güncellendi.</value></data>
+  <data name="DisplayNameLabel" xml:space="preserve"><value>Ad Soyad</value></data>
+  <data name="EmailLabel" xml:space="preserve"><value>E-posta</value></data>
+  <data name="CurrentPasswordLabel" xml:space="preserve"><value>Mevcut Şifre</value></data>
+  <data name="NewPasswordLabel" xml:space="preserve"><value>Yeni Şifre</value></data>
+  <data name="UpdateProfileButton" xml:space="preserve"><value>Güncelle</value></data>
+</root> 

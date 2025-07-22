@@ -1,0 +1,66 @@
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+@{
+    ViewData["Title"] = "Ana Sayfa";
+    var welcomeTitle = Localizer["WelcomeTitle", "SmartRoutine'a Hoş Geldiniz"];
+    var welcomeLead = Localizer["WelcomeLead", "Günlük rutinlerinizi kolayca yönetin ve takip edin."];
+    var routineManagement = Localizer["RoutineManagement", "Rutin Yönetimi"];
+    var routineManagementDesc = Localizer["RoutineManagementDesc", "Günlük ve haftalık rutinlerinizi oluşturun, düzenleyin ve takip edin."];
+    var stats = Localizer["Stats", "İstatistikler"];
+    var statsDesc = Localizer["StatsDesc", "Başarı oranınızı görün, streak'inizi takip edin ve ilerlemenizi analiz edin."];
+    var reminders = Localizer["Reminders", "Hatırlatmalar"];
+    var remindersDesc = Localizer["RemindersDesc", "Rutinleriniz için zaman ayarlayın ve mobil uygulamada bildirim alın."];
+    var startNow = Localizer["StartNow", "Hemen Başla"];
+    var login = Localizer["Login", "Giriş Yap"];
+    var goToDashboard = Localizer["GoToDashboard", "Panele Git"];
+}
+
+<div class="text-center">
+    <h1 class="display-4" aria-label="@welcomeTitle" tabindex="0">@welcomeTitle</h1>
+    <p class="lead" aria-label="@welcomeLead" tabindex="0">@welcomeLead</p>
+    
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title" aria-label="@routineManagement" tabindex="0">📅 @routineManagement</h5>
+                    <p class="card-text" aria-label="@routineManagementDesc" tabindex="0">@routineManagementDesc</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title" aria-label="@stats" tabindex="0">📊 @stats</h5>
+                    <p class="card-text" aria-label="@statsDesc" tabindex="0">@statsDesc</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title" aria-label="@reminders" tabindex="0">🔔 @reminders</h5>
+                    <p class="card-text" aria-label="@remindersDesc" tabindex="0">@remindersDesc</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-4" id="auth-buttons">
+        <a class="btn btn-primary btn-lg me-3" asp-controller="Home" asp-action="Register" aria-label="@startNow">@startNow</a>
+        <a class="btn btn-outline-primary btn-lg" asp-controller="Home" asp-action="Login" aria-label="@login">@login</a>
+    </div>
+    
+    <div class="mt-4" id="dashboard-button" style="display: none;">
+        <a class="btn btn-primary btn-lg" asp-controller="Home" asp-action="Dashboard" aria-label="@goToDashboard">@goToDashboard</a>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Check if user is logged in
+        if (localStorage.getItem('token')) {
+            document.getElementById('auth-buttons').style.display = 'none';
+            document.getElementById('dashboard-button').style.display = 'block';
+        }
+    </script>
+} 

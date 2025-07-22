@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="WelcomeTitle" xml:space="preserve">
+    <value>Welcome to SmartRoutine</value>
+  </data>
+  <data name="WelcomeLead" xml:space="preserve">
+    <value>Easily manage and track your daily routines.</value>
+  </data>
+  <data name="RoutineManagement" xml:space="preserve">
+    <value>Routine Management</value>
+  </data>
+  <data name="RoutineManagementDesc" xml:space="preserve">
+    <value>Create, edit, and track your daily and weekly routines.</value>
+  </data>
+  <data name="Stats" xml:space="preserve">
+    <value>Statistics</value>
+  </data>
+  <data name="StatsDesc" xml:space="preserve">
+    <value>See your success rate, track your streak, and analyze your progress.</value>
+  </data>
+  <data name="Reminders" xml:space="preserve">
+    <value>Reminders</value>
+  </data>
+  <data name="RemindersDesc" xml:space="preserve">
+    <value>Set times for your routines and get notifications on the mobile app.</value>
+  </data>
+  <data name="StartNow" xml:space="preserve">
+    <value>Start Now</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="GoToDashboard" xml:space="preserve">
+    <value>Go to Dashboard</value>
+  </data>
+</root> 

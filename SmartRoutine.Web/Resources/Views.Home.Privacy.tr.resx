@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="PrivacyPolicyTitle" xml:space="preserve"><value>Gizlilik Politikası</value></data>
+  <data name="DataCollectionTitle" xml:space="preserve"><value>Veri Toplama ve Kullanımı</value></data>
+  <data name="DataCollectionDescription" xml:space="preserve"><value>SmartRoutine uygulaması, size daha iyi bir deneyim sunabilmek için aşağıdaki bilgileri toplar:</value></data>
+  <data name="EmailAddress" xml:space="preserve"><value>Email adresi (hesap oluşturma ve giriş için)</value></data>
+  <data name="Password" xml:space="preserve"><value>Şifre (güvenli bir şekilde hashlenerek saklanır)</value></data>
+  <data name="RoutineInformation" xml:space="preserve"><value>Rutin bilgileri (kişisel rutinlerinizi takip etmek için)</value></data>
+  <data name="UsageStatistics" xml:space="preserve"><value>Kullanım istatistikleri (uygulama performansını iyileştirmek için)</value></data>
+  <data name="DataSecurityTitle" xml:space="preserve"><value>Veri Güvenliği</value></data>
+  <data name="DataSecurityDescription" xml:space="preserve"><value>Verilerinizin güvenliği bizim için önceliktir:</value></data>
+  <data name="PasswordHashing" xml:space="preserve"><value>Tüm şifreler BCrypt ile hashlenerek saklanır</value></data>
+  <data name="HTTPSProtocol" xml:space="preserve"><value>HTTPS protokolü kullanılarak veri iletimi güvenlidir</value></data>
+  <data name="JWTTokenSystem" xml:space="preserve"><value>JWT token sistemi ile güvenli oturum yönetimi sağlanır</value></data>
+  <data name="DataStorage" xml:space="preserve"><value>Veriler yerel SQLite veritabanında saklanır</value></data>
+  <data name="DataSharingTitle" xml:space="preserve"><value>Veri Paylaşımı</value></data>
+  <data name="DataSharingDescription" xml:space="preserve"><value>Kişisel bilgilerinizi üçüncü taraflarla paylaşmıyoruz. Verileriniz sadece uygulama fonksiyonlarını sağlamak amacıyla kullanılır.</value></data>
+  <data name="ContactTitle" xml:space="preserve"><value>İletişim</value></data>
+  <data name="ContactDescription" xml:space="preserve"><value>Gizlilik politikamız hakkında sorularınız varsa, lütfen bizimle iletişime geçin.</value></data>
+</root> 

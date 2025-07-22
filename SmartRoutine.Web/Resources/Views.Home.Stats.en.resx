@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="Statistics" xml:space="preserve"><value>Statistics</value></data>
+  <data name="TotalRoutines" xml:space="preserve"><value>Total Routines</value></data>
+  <data name="CompletedToday" xml:space="preserve"><value>Completed Today</value></data>
+  <data name="CompletionRate" xml:space="preserve"><value>Completion Rate</value></data>
+  <data name="DailyStreak" xml:space="preserve"><value>Daily Streak</value></data>
+  <data name="WeeklyProgress" xml:space="preserve"><value>Weekly Progress</value></data>
+  <data name="Summary" xml:space="preserve"><value>Summary</value></data>
+  <data name="BestStreak" xml:space="preserve"><value>Best Streak</value></data>
+  <data name="CompletedThisWeek" xml:space="preserve"><value>Completed This Week</value></data>
+  <data name="DailyGoalProgress" xml:space="preserve"><value>Daily goal progress</value></data>
+</root> 

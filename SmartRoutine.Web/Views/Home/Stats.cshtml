@@ -1,0 +1,84 @@
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+@{
+    ViewData["Title"] = "İstatistikler";
+}
+
+<div class="row">
+    <div class="col-12">
+        <h2 class="mb-4">@Localizer["Statistics"]</h2>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">@Localizer["TotalRoutines"]</h5>
+                <h3 class="text-primary" id="totalRoutines">-</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">@Localizer["CompletedToday"]</h5>
+                <h3 class="text-success" id="completedToday">-</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">@Localizer["CompletionRate"]</h5>
+                <h3 class="text-info" id="completionRate">-%</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">@Localizer["DailyStreak"]</h5>
+                <h3 class="text-warning" id="currentStreak">-</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">@Localizer["WeeklyProgress"]</h5>
+            </div>
+            <div class="card-body">
+                <canvas id="weeklyChart" width="400" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">@Localizer["Summary"]</h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <strong>@Localizer["BestStreak"]:</strong>
+                    <span id="bestStreak" class="text-warning">-</span>
+                </div>
+                <div class="mb-3">
+                    <strong>@Localizer["CompletedThisWeek"]:</strong>
+                    <span id="weekCompleted" class="text-success">-</span>
+                </div>
+                <div class="progress mb-2">
+                    <div class="progress-bar" id="progressBar" role="progressbar" style="width: 0%"></div>
+                </div>
+                <small class="text-muted">@Localizer["DailyGoalProgress"]</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="~/js/stats.js"></script>
+} 

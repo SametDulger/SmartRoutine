@@ -1,0 +1,46 @@
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+@model SmartRoutine.Web.Models.UpdateProfileViewModel
+@{
+    ViewData["Title"] = Localizer["UpdateProfileTitle", "Profil Bilgilerini Güncelle"].Value;
+    var displayNameLabel = Localizer["DisplayNameLabel", "Ad Soyad"].Value;
+    var emailLabel = Localizer["EmailLabel", "E-posta"].Value;
+    var currentPasswordLabel = Localizer["CurrentPasswordLabel", "Mevcut Şifre"].Value;
+    var newPasswordLabel = Localizer["NewPasswordLabel", "Yeni Şifre"].Value;
+    var updateProfileButton = Localizer["UpdateProfileButton", "Güncelle"].Value;
+    var profileUpdatedSuccessfully = Localizer["ProfileUpdatedSuccessfully", "Profil başarıyla güncellendi."].Value;
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@if (ViewBag.Success == true)
+{
+    <div class="alert alert-success" role="alert">@profileUpdatedSuccessfully</div>
+}
+
+<form asp-action="UpdateProfile" method="post" class="needs-validation" novalidate>
+    <div class="mb-3">
+        <label asp-for="DisplayName" class="form-label">@displayNameLabel</label>
+        <input asp-for="DisplayName" class="form-control" aria-label="@displayNameLabel" />
+        <span asp-validation-for="DisplayName" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label">@emailLabel</label>
+        <input asp-for="Email" class="form-control" aria-label="@emailLabel" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="CurrentPassword" class="form-label">@currentPasswordLabel</label>
+        <input asp-for="CurrentPassword" class="form-control" type="password" aria-label="@currentPasswordLabel" />
+        <span asp-validation-for="CurrentPassword" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="NewPassword" class="form-label">@newPasswordLabel</label>
+        <input asp-for="NewPassword" class="form-control" type="password" aria-label="@newPasswordLabel" />
+        <span asp-validation-for="NewPassword" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">@updateProfileButton</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+} 

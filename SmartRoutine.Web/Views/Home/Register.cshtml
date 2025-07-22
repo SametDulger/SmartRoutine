@@ -1,0 +1,67 @@
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+@model SmartRoutine.Web.Models.RegisterViewModel
+@{
+    ViewData["Title"] = Localizer["Register", "Kayıt Ol"].Value;
+    var emailLabel = Localizer["Email", "E-posta"].Value;
+    var passwordLabel = Localizer["Password", "Şifre"].Value;
+    var confirmPasswordLabel = Localizer["ConfirmPassword", "Şifre (Tekrar)"].Value;
+    var registerLabel = Localizer["Register", "Kayıt Ol"].Value;
+    var alreadyHaveAccount = Localizer["AlreadyHaveAccount", "Zaten hesabınız var mı?"].Value;
+    var loginHere = Localizer["LoginHere", "Giriş yapın"].Value;
+    var errorLabel = Localizer["Error", "Hata"].Value;
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="mb-0">@registerLabel</h3>
+            </div>
+            <div class="card-body">
+                <form id="registerForm" asp-action="Register" method="post">
+                    <div class="mb-3">
+                        <label asp-for="Email" class="form-label">@emailLabel</label>
+                        <input id="email" asp-for="Email" class="form-control" aria-label="@emailLabel" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Password" class="form-label">@passwordLabel</label>
+                        <input id="password" asp-for="Password" class="form-control" type="password" aria-label="@passwordLabel" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="ConfirmPassword" class="form-label">@confirmPasswordLabel</label>
+                        <input id="confirmPassword" asp-for="ConfirmPassword" class="form-control" type="password" aria-label="@confirmPasswordLabel" />
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">@registerLabel</button>
+                </form>
+                <div class="text-center mt-3">
+                    <p>@alreadyHaveAccount <a asp-controller="Home" asp-action="Login">@loginHere</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="toast-container position-fixed top-0 end-0 p-3">
+    <div id="successToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header bg-success text-white">
+            <strong class="me-auto">Başarılı</strong>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
+        </div>
+        <div class="toast-body" id="successMessage"></div>
+    </div>
+    <div id="errorToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header bg-danger text-white">
+            <strong class="me-auto">@errorLabel</strong>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
+        </div>
+        <div class="toast-body" id="errorMessage"></div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/js/auth.js" asp-append-version="true"></script>
+} 

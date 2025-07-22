@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="Statistics" xml:space="preserve"><value>İstatistikler</value></data>
+  <data name="TotalRoutines" xml:space="preserve"><value>Toplam Rutin</value></data>
+  <data name="CompletedToday" xml:space="preserve"><value>Bugün Tamamlanan</value></data>
+  <data name="CompletionRate" xml:space="preserve"><value>Başarı Oranı</value></data>
+  <data name="DailyStreak" xml:space="preserve"><value>Günlük Streak</value></data>
+  <data name="WeeklyProgress" xml:space="preserve"><value>Haftalık İlerleme</value></data>
+  <data name="Summary" xml:space="preserve"><value>Özet</value></data>
+  <data name="BestStreak" xml:space="preserve"><value>En İyi Streak</value></data>
+  <data name="CompletedThisWeek" xml:space="preserve"><value>Bu Hafta Tamamlanan</value></data>
+  <data name="DailyGoalProgress" xml:space="preserve"><value>Günlük hedef ilerleme</value></data>
+</root> 

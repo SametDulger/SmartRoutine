@@ -1,0 +1,40 @@
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+@model SmartRoutine.Web.Models.ErrorViewModel
+@{
+    ViewData["Title"] = "Hata";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="text-center">
+            <h1 class="display-1 text-danger">🚫</h1>
+            <h2 class="display-4">@Localizer["ErrorTitle", "Bir Hata Oluştu"]</h2>
+            <p class="lead">@Localizer["ErrorDescription", "İsteğiniz işlenirken beklenmeyen bir hata oluştu."]
+            </p>
+            
+            @if (Model.ShowRequestId)
+            {
+                <div class="alert alert-info">
+                    <strong>@Localizer["RequestIdLabel", "İstek Kimliği"]:</strong> <code>@Model.RequestId</code>
+                </div>
+            }
+            
+            <div class="mt-4">
+                <a class="btn btn-primary" asp-controller="Home" asp-action="Index">@Localizer["BackToHome", "Ana Sayfaya Dön"]</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (ViewData["Development"] != null)
+{
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="alert alert-warning">
+                <h4>@Localizer["DevelopmentInfoTitle", "Geliştirme Bilgisi"]</h4>
+                <p>@Localizer["DevelopmentInfoDescription", "Bu hata geliştirme ortamında görüntülenmektedir."]
+                </p>
+            </div>
+        </div>
+    </div>
+} 

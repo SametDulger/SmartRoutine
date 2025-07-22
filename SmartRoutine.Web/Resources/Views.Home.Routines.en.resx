@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="Routines" xml:space="preserve"><value>My Routines</value></data>
+  <data name="AddRoutine" xml:space="preserve"><value>Add New Routine</value></data>
+  <data name="Today" xml:space="preserve"><value>Today</value></data>
+  <data name="ThisWeek" xml:space="preserve"><value>This Week</value></data>
+  <data name="RoutineTitle" xml:space="preserve"><value>Routine Title</value></data>
+  <data name="Description" xml:space="preserve"><value>Description</value></data>
+  <data name="TimeOfDay" xml:space="preserve"><value>Time</value></data>
+  <data name="RepeatType" xml:space="preserve"><value>Repeat Type</value></data>
+  <data name="Daily" xml:space="preserve"><value>Daily</value></data>
+  <data name="Weekly" xml:space="preserve"><value>Weekly</value></data>
+  <data name="Cancel" xml:space="preserve"><value>Cancel</value></data>
+  <data name="Add" xml:space="preserve"><value>Add</value></data>
+  <data name="EditRoutine" xml:space="preserve"><value>Edit Routine</value></data>
+  <data name="IsActive" xml:space="preserve"><value>Active</value></data>
+  <data name="Update" xml:space="preserve"><value>Update</value></data>
+  <data name="Success" xml:space="preserve"><value>Success</value></data>
+  <data name="Error" xml:space="preserve"><value>Error</value></data>
+</root> 

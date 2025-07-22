@@ -1,0 +1,99 @@
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SmartRoutine</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header role="banner">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary border-bottom box-shadow mb-3" aria-label="Ana navigasyon">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">@Localizer["AppName", "SmartRoutine"]</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">@Localizer["Home", "Ana Sayfa"]</a>
+                        </li>
+                        <li class="nav-item" id="nav-dashboard" style="display: none;">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Dashboard">@Localizer["Dashboard", "Panel"]</a>
+                        </li>
+                        <li class="nav-item" id="nav-routines" style="display: none;">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Routines">@Localizer["MyRoutines", "Rutinlerim"]</a>
+                        </li>
+                        <li class="nav-item" id="nav-stats" style="display: none;">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Stats">@Localizer["Stats", "İstatistikler"]</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item" id="nav-register">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Register">@Localizer["Register", "Kayıt Ol"]</a>
+                        </li>
+                        <li class="nav-item" id="nav-login">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Login">@Localizer["Login", "Giriş Yap"]</a>
+                        </li>
+                        <li class="nav-item" id="nav-logout" style="display: none;">
+                            <a class="nav-link" href="#" onclick="logout()">@Localizer["Logout", "Çıkış Yap"]</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="langDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                @Localizer["Language", "Dil"]
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="langDropdown">
+                                <li><a class="dropdown-item" href="#" onclick="setLang('tr')">@Localizer["Turkish", "Türkçe"]</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setLang('en')">@Localizer["English", "English"]</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container" role="main">
+        <main class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted" role="contentinfo">
+        <div class="container">
+            &copy; 2024 - SmartRoutine - <a asp-area="" asp-controller="Home" asp-action="Privacy">@Localizer["Privacy", "Gizlilik"]</a>
+        </div>
+    </footer>
+
+    <form id="__antiforgery" style="display:none;">
+        @Html.AntiForgeryToken()
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+    <script src="~/js/signalr-notification.js" asp-append-version="true"></script>
+    <script>
+        window.API_BASE_URL = '@ViewBag.ApiBaseUrl' || 'http://localhost:5000/api';
+    </script>
+    <script>
+        function setLang(lang) {
+            // Cookie ayarla
+            document.cookie = ".AspNetCore.Culture=culture=" + lang + "|uiculture=" + lang + "; path=/";
+            // Query string ile yönlendir
+            var url = new URL(window.location.href);
+            url.searchParams.set('culture', lang);
+            window.location.href = url.toString();
+        }
+        // Sayfa yüklendiğinde lang ayarını uygula
+        document.addEventListener('DOMContentLoaded', function() {
+            var lang = localStorage.getItem('lang') || 'tr';
+            document.documentElement.lang = lang;
+        });
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html> 
