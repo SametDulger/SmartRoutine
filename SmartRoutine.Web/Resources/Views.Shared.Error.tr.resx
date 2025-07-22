@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="ErrorTitle" xml:space="preserve"><value>Bir Hata Oluştu</value></data>
+  <data name="ErrorDescription" xml:space="preserve"><value>İsteğiniz işlenirken beklenmeyen bir hata oluştu.</value></data>
+  <data name="RequestIdLabel" xml:space="preserve"><value>İstek Kimliği</value></data>
+  <data name="BackToHome" xml:space="preserve"><value>Ana Sayfaya Dön</value></data>
+  <data name="DevelopmentInfoTitle" xml:space="preserve"><value>Geliştirme Bilgisi</value></data>
+  <data name="DevelopmentInfoDescription" xml:space="preserve"><value>Bu hata geliştirme ortamında görüntülenmektedir.</value></data>
+</root> 

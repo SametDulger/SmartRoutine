@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="ErrorTitle" xml:space="preserve"><value>An Error Occurred</value></data>
+  <data name="ErrorDescription" xml:space="preserve"><value>An unexpected error occurred while processing your request.</value></data>
+  <data name="RequestIdLabel" xml:space="preserve"><value>Request ID</value></data>
+  <data name="BackToHome" xml:space="preserve"><value>Back to Home</value></data>
+  <data name="DevelopmentInfoTitle" xml:space="preserve"><value>Development Info</value></data>
+  <data name="DevelopmentInfoDescription" xml:space="preserve"><value>This error is displayed in the development environment.</value></data>
+</root> 

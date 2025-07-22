@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="UpdateProfileTitle" xml:space="preserve"><value>Update Profile Information</value></data>
+  <data name="ProfileUpdatedSuccessfully" xml:space="preserve"><value>Profile updated successfully.</value></data>
+  <data name="DisplayNameLabel" xml:space="preserve"><value>Full Name</value></data>
+  <data name="EmailLabel" xml:space="preserve"><value>Email</value></data>
+  <data name="CurrentPasswordLabel" xml:space="preserve"><value>Current Password</value></data>
+  <data name="NewPasswordLabel" xml:space="preserve"><value>New Password</value></data>
+  <data name="UpdateProfileButton" xml:space="preserve"><value>Update</value></data>
+</root> 

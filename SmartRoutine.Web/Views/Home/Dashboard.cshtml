@@ -1,0 +1,121 @@
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+@{
+    ViewData["Title"] = Localizer["PanelTitle", "Panel"];
+    var dailyPanel = Localizer["DailyPanel", "Günlük Panel"];
+    var totalRoutines = Localizer["TotalRoutines", "Toplam Rutin"];
+    var completedToday = Localizer["CompletedToday", "Bugün Tamamlanan"];
+    var completionRate = Localizer["CompletionRate", "Başarı Oranı"];
+    var currentStreak = Localizer["CurrentStreak", "Günlük Streak"];
+    var todaysRoutines = Localizer["TodaysRoutines", "Bugünün Rutinleri"];
+    var seeAll = Localizer["SeeAll", "Tümünü Gör"];
+    var loading = Localizer["Loading", "Yükleniyor..."];
+    var quickAddRoutine = Localizer["QuickAddRoutine", "Hızlı Rutin Ekle"];
+    var routineName = Localizer["RoutineName", "Rutin Adı"];
+    var time = Localizer["Time", "Saat"];
+    var add = Localizer["Add", "Ekle"];
+    var success = Localizer["Success", "Başarılı"];
+    var error = Localizer["Error", "Hata"];
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>@dailyPanel</h2>
+    <div>
+        <span class="badge bg-primary fs-6" id="todayDate"></span>
+    </div>
+</div>
+
+<div class="row mb-4 g-3">
+    <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card text-center h-100">
+            <div class="card-body">
+                <h5 class="card-title">@totalRoutines</h5>
+                <h3 class="text-primary" id="totalRoutines">-</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card text-center h-100">
+            <div class="card-body">
+                <h5 class="card-title">@completedToday</h5>
+                <h3 class="text-success" id="completedToday">-</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card text-center h-100">
+            <div class="card-body">
+                <h5 class="card-title">@completionRate</h5>
+                <h3 class="text-info" id="completionRate">-%</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card text-center h-100">
+            <div class="card-body">
+                <h5 class="card-title">@currentStreak</h5>
+                <h3 class="text-warning" id="currentStreak">-</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-3">
+    <div class="col-12 col-lg-8">
+        <div class="card h-100">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">@todaysRoutines</h5>
+                <a href="/Home/Routines" class="btn btn-sm btn-outline-primary">@seeAll</a>
+            </div>
+            <div class="card-body">
+                <div id="todayRoutines">
+                    <div class="text-center">
+                        <div class="spinner-border" role="status">
+                            <span class="visually-hidden">@loading</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-lg-4">
+        <div class="card h-100">
+            <div class="card-header">
+                <h5 class="mb-0">@quickAddRoutine</h5>
+            </div>
+            <div class="card-body">
+                <form id="quickAddForm">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">@routineName</label>
+                        <input type="text" class="form-control" id="title" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="timeOfDay" class="form-label">@time</label>
+                        <input type="time" class="form-control" id="timeOfDay" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">@add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="toast-container position-fixed top-0 end-0 p-3">
+    <div id="successToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header bg-success text-white">
+            <strong class="me-auto">@success</strong>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
+        </div>
+        <div class="toast-body" id="successMessage"></div>
+    </div>
+    <div id="errorToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header bg-danger text-white">
+            <strong class="me-auto">@error</strong>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
+        </div>
+        <div class="toast-body" id="errorMessage"></div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/dashboard.js"></script>
+} 

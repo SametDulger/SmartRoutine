@@ -1,0 +1,149 @@
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+@{
+    ViewData["Title"] = "Rutinlerim";
+    var routineTitleLabel = Localizer["RoutineTitle"];
+    var descriptionLabel = Localizer["Description"];
+    var timeOfDayLabel = Localizer["TimeOfDay"];
+    var repeatTypeLabel = Localizer["RepeatType"];
+    var dailyLabel = Localizer["Daily"];
+    var weeklyLabel = Localizer["Weekly"];
+    var isActiveLabel = Localizer["IsActive"];
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>@Localizer["Routines"]</h2>
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addRoutineModal">
+        <i class="bi bi-plus-circle"></i> @Localizer["AddRoutine"]
+    </button>
+</div>
+
+<div class="row mb-3">
+    <div class="col">
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link active" href="#" onclick="loadTodayRoutines()">@Localizer["Today"]</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="loadWeekRoutines()">@Localizer["ThisWeek"]</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <div id="routinesList">
+            <div class="text-center">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Yükleniyor...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add Routine Modal -->
+<div class="modal fade" id="addRoutineModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@Localizer["AddRoutine"]</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="addRoutineForm">
+                    <div class="mb-3">
+                        <label for="modalTitle" class="form-label">@routineTitleLabel</label>
+                        <input type="text" class="form-control" id="modalTitle" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="modalDescription" class="form-label">@descriptionLabel</label>
+                        <textarea class="form-control" id="modalDescription" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="modalTimeOfDay" class="form-label">@timeOfDayLabel</label>
+                        <input type="time" class="form-control" id="modalTimeOfDay" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="modalRepeatType" class="form-label">@repeatTypeLabel</label>
+                        <select class="form-control" id="modalRepeatType">
+                            <option value="Daily">@dailyLabel</option>
+                            <option value="Weekly">@weeklyLabel</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@Localizer["Cancel"]</button>
+                <button type="button" class="btn btn-primary" onclick="addRoutine()">@Localizer["Add"]</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Routine Modal -->
+<div class="modal fade" id="editRoutineModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@Localizer["EditRoutine"]</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editRoutineForm">
+                    <input type="hidden" id="editRoutineId">
+                    <div class="mb-3">
+                        <label for="editTitle" class="form-label">@routineTitleLabel</label>
+                        <input type="text" class="form-control" id="editTitle" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editDescription" class="form-label">@descriptionLabel</label>
+                        <textarea class="form-control" id="editDescription" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editTimeOfDay" class="form-label">@timeOfDayLabel</label>
+                        <input type="time" class="form-control" id="editTimeOfDay" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editRepeatType" class="form-label">@repeatTypeLabel</label>
+                        <select class="form-control" id="editRepeatType">
+                            <option value="1">@dailyLabel</option>
+                            <option value="2">@weeklyLabel</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="editIsActive">
+                            <label class="form-check-label" for="editIsActive">@isActiveLabel</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@Localizer["Cancel"]</button>
+                <button type="button" class="btn btn-primary" onclick="updateRoutine()">@Localizer["Update"]</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="toast-container position-fixed top-0 end-0 p-3">
+    <div id="successToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header bg-success text-white">
+            <strong class="me-auto">@Localizer["Success"]</strong>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
+        </div>
+        <div class="toast-body" id="successMessage"></div>
+    </div>
+    <div id="errorToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header bg-danger text-white">
+            <strong class="me-auto">@Localizer["Error"]</strong>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
+        </div>
+        <div class="toast-body" id="errorMessage"></div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/routines.js"></script>
+} 

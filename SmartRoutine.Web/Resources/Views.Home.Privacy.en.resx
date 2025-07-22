@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="PrivacyPolicyTitle" xml:space="preserve"><value>Privacy Policy</value></data>
+  <data name="DataCollectionTitle" xml:space="preserve"><value>Data Collection and Usage</value></data>
+  <data name="DataCollectionDescription" xml:space="preserve"><value>SmartRoutine app collects the following information to provide you with a better experience:</value></data>
+  <data name="EmailAddress" xml:space="preserve"><value>Email address (for account creation and login)</value></data>
+  <data name="Password" xml:space="preserve"><value>Password (securely hashed and stored)</value></data>
+  <data name="RoutineInformation" xml:space="preserve"><value>Routine information (to track your personal routines)</value></data>
+  <data name="UsageStatistics" xml:space="preserve"><value>Usage statistics (to improve app performance)</value></data>
+  <data name="DataSecurityTitle" xml:space="preserve"><value>Data Security</value></data>
+  <data name="DataSecurityDescription" xml:space="preserve"><value>Your data security is our priority:</value></data>
+  <data name="PasswordHashing" xml:space="preserve"><value>All passwords are stored hashed with BCrypt</value></data>
+  <data name="HTTPSProtocol" xml:space="preserve"><value>Data transmission is secure via HTTPS protocol</value></data>
+  <data name="JWTTokenSystem" xml:space="preserve"><value>Secure session management with JWT token system</value></data>
+  <data name="DataStorage" xml:space="preserve"><value>Data is stored in a local SQLite database</value></data>
+  <data name="DataSharingTitle" xml:space="preserve"><value>Data Sharing</value></data>
+  <data name="DataSharingDescription" xml:space="preserve"><value>We do not share your personal information with third parties. Your data is only used to provide app functionality.</value></data>
+  <data name="ContactTitle" xml:space="preserve"><value>Contact</value></data>
+  <data name="ContactDescription" xml:space="preserve"><value>If you have questions about our privacy policy, please contact us.</value></data>
+</root> 

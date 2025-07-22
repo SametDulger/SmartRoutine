@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="Error_EmailAlreadyInUse" xml:space="preserve">
+    <value>This email address is already in use.</value>
+  </data>
+  <data name="Error_UserNotFound" xml:space="preserve">
+    <value>User not found.</value>
+  </data>
+  <data name="Error_InvalidEmailOrPassword" xml:space="preserve">
+    <value>Invalid email or password.</value>
+  </data>
+  <data name="Error_RoutineNotFound" xml:space="preserve">
+    <value>Routine not found.</value>
+  </data>
+  <data name="Error_RoutineAccessDenied" xml:space="preserve">
+    <value>You do not have access to this routine.</value>
+  </data>
+</root> 

@@ -1,0 +1,82 @@
+# .NET & Visual Studio
+**/bin/
+**/obj/
+**/.vs/
+**/.vscode/
+**/*.user
+**/*.suo
+**/*.userosscache
+**/*.sln.docstates
+
+# Rider/JetBrains
+.idea/
+*.sln.iml
+
+# Build outputs
+**/out/
+**/publish/
+**/TestResults/
+
+# Logs
+**/logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Database
+*.db
+*.sqlite
+*.mdf
+*.ldf
+
+# Secrets & local configs
+appsettings.Development.json
+appsettings.Local.json
+.env
+.env.*
+
+# Node/React/Expo (Mobile)
+SmartRoutine.Mobile/node_modules/
+SmartRoutine.Mobile/.expo/
+SmartRoutine.Mobile/dist/
+SmartRoutine.Mobile/web-build/
+SmartRoutine.Mobile/expo-env.d.ts
+
+# Metro
+SmartRoutine.Mobile/.metro-health-check*
+
+# macOS/Windows
+.DS_Store
+Thumbs.db
+
+# Typescript
+*.tsbuildinfo
+
+# IDE/Editor
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Certificates/Keys
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.pem
+
+# Android/iOS build
+*.apk
+*.aab
+*.ipa
+*.xcarchive
+*.xcuserstate
+
+# Test/coverage
+coverage/
+*.coverage
+*.testresults
+
+# Git
+.git/ 

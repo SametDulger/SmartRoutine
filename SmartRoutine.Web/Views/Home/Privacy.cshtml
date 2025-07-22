@@ -1,0 +1,58 @@
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+@{
+    ViewData["Title"] = Localizer["PrivacyPolicyTitle", "Gizlilik Politikası"];
+}
+
+<div class="row">
+    <div class="col-12">
+        <h2>@Localizer["PrivacyPolicyTitle", "Gizlilik Politikası"]</h2>
+        
+        <div class="card mt-4">
+            <div class="card-body">
+                <h5 class="card-title">@Localizer["DataCollectionTitle", "Veri Toplama ve Kullanımı"]</h5>
+                <p class="card-text">
+                    @Localizer["DataCollectionDescription", "SmartRoutine uygulaması, size daha iyi bir deneyim sunabilmek için aşağıdaki bilgileri toplar:"]
+                </p>
+                <ul>
+                    <li>@Localizer["EmailAddress", "Email adresi (hesap oluşturma ve giriş için)"]</li>
+                    <li>@Localizer["Password", "Şifre (güvenli bir şekilde hashlenerek saklanır)"]</li>
+                    <li>@Localizer["RoutineInformation", "Rutin bilgileri (kişisel rutinlerinizi takip etmek için)"]</li>
+                    <li>@Localizer["UsageStatistics", "Kullanım istatistikleri (uygulama performansını iyileştirmek için)"]</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card mt-3">
+            <div class="card-body">
+                <h5 class="card-title">@Localizer["DataSecurityTitle", "Veri Güvenliği"]</h5>
+                <p class="card-text">
+                    @Localizer["DataSecurityDescription", "Verilerinizin güvenliği bizim için önceliktir:"]
+                </p>
+                <ul>
+                    <li>@Localizer["PasswordHashing", "Tüm şifreler BCrypt ile hashlenerek saklanır"]</li>
+                    <li>@Localizer["HTTPSProtocol", "HTTPS protokolü kullanılarak veri iletimi güvenlidir"]</li>
+                    <li>@Localizer["JWTTokenSystem", "JWT token sistemi ile güvenli oturum yönetimi sağlanır"]</li>
+                    <li>@Localizer["DataStorage", "Veriler yerel SQLite veritabanında saklanır"]</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card mt-3">
+            <div class="card-body">
+                <h5 class="card-title">@Localizer["DataSharingTitle", "Veri Paylaşımı"]</h5>
+                <p class="card-text">
+                    @Localizer["DataSharingDescription", "Kişisel bilgilerinizi üçüncü taraflarla paylaşmıyoruz. Verileriniz sadece uygulama fonksiyonlarını sağlamak amacıyla kullanılır."]
+                </p>
+            </div>
+        </div>
+
+        <div class="card mt-3">
+            <div class="card-body">
+                <h5 class="card-title">@Localizer["ContactTitle", "İletişim"]</h5>
+                <p class="card-text">
+                    @Localizer["ContactDescription", "Gizlilik politikamız hakkında sorularınız varsa, lütfen bizimle iletişime geçin."]
+                </p>
+            </div>
+        </div>
+    </div>
+</div> 

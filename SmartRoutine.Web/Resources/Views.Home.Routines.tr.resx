@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="Routines" xml:space="preserve"><value>Rutinlerim</value></data>
+  <data name="AddRoutine" xml:space="preserve"><value>Yeni Rutin Ekle</value></data>
+  <data name="Today" xml:space="preserve"><value>Bugün</value></data>
+  <data name="ThisWeek" xml:space="preserve"><value>Bu Hafta</value></data>
+  <data name="RoutineTitle" xml:space="preserve"><value>Rutin Adı</value></data>
+  <data name="Description" xml:space="preserve"><value>Açıklama</value></data>
+  <data name="TimeOfDay" xml:space="preserve"><value>Saat</value></data>
+  <data name="RepeatType" xml:space="preserve"><value>Tekrar Türü</value></data>
+  <data name="Daily" xml:space="preserve"><value>Günlük</value></data>
+  <data name="Weekly" xml:space="preserve"><value>Haftalık</value></data>
+  <data name="Cancel" xml:space="preserve"><value>İptal</value></data>
+  <data name="Add" xml:space="preserve"><value>Ekle</value></data>
+  <data name="EditRoutine" xml:space="preserve"><value>Rutin Düzenle</value></data>
+  <data name="IsActive" xml:space="preserve"><value>Aktif</value></data>
+  <data name="Update" xml:space="preserve"><value>Güncelle</value></data>
+  <data name="Success" xml:space="preserve"><value>Başarılı</value></data>
+  <data name="Error" xml:space="preserve"><value>Hata</value></data>
+</root> 

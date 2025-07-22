@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="WelcomeTitle" xml:space="preserve">
+    <value>SmartRoutine'a Hoş Geldiniz</value>
+  </data>
+  <data name="WelcomeLead" xml:space="preserve">
+    <value>Günlük rutinlerinizi kolayca yönetin ve takip edin.</value>
+  </data>
+  <data name="RoutineManagement" xml:space="preserve">
+    <value>Rutin Yönetimi</value>
+  </data>
+  <data name="RoutineManagementDesc" xml:space="preserve">
+    <value>Günlük ve haftalık rutinlerinizi oluşturun, düzenleyin ve takip edin.</value>
+  </data>
+  <data name="Stats" xml:space="preserve">
+    <value>İstatistikler</value>
+  </data>
+  <data name="StatsDesc" xml:space="preserve">
+    <value>Başarı oranınızı görün, streak'inizi takip edin ve ilerlemenizi analiz edin.</value>
+  </data>
+  <data name="Reminders" xml:space="preserve">
+    <value>Hatırlatmalar</value>
+  </data>
+  <data name="RemindersDesc" xml:space="preserve">
+    <value>Rutinleriniz için zaman ayarlayın ve mobil uygulamada bildirim alın.</value>
+  </data>
+  <data name="StartNow" xml:space="preserve">
+    <value>Hemen Başla</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Giriş Yap</value>
+  </data>
+  <data name="GoToDashboard" xml:space="preserve">
+    <value>Panele Git</value>
+  </data>
+</root> 
